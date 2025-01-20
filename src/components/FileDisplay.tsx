@@ -10,7 +10,7 @@ export default function FileDisplay({
   handleAudioReset,
 }: FileDisplayProps) {
   return (
-    <main className="flex flex-col justify-center flex-1 max-w-full gap-3 p-4 pb-20 mx-auto text-center sm:gap-4 w-72">
+    <main className="flex flex-col justify-center flex-1 max-w-full gap-3 p-4 pb-20 mx-auto text-center sm:gap-4 w-72 sm:w-96 md:w-96">
       <h1 className="font-semibold text-center text:4xl sm:text-5xl md:text-6xl">
         Your <span className="text-blue-400 bold">File</span>
       </h1>
