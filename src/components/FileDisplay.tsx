@@ -1,12 +1,14 @@
 type FileDisplayProps = {
   file: File | null;
   audioStream: Blob | null;
+  handleSubmit: () => void;
   handleAudioReset: () => void;
 };
 
 export default function FileDisplay({
   file,
   audioStream,
+  handleSubmit,
   handleAudioReset,
 }: FileDisplayProps) {
   return (
@@ -25,7 +27,10 @@ export default function FileDisplay({
         >
           Reset
         </button>
-        <button className="flex items-center gap-2 p-2 font-medium text-blue-400 rounded-lg special-button">
+        <button
+          onClick={handleSubmit}
+          className="flex items-center gap-2 p-2 font-medium text-blue-400 rounded-lg special-button"
+        >
           <p>Transcribe</p>
           <i className="fa-solid fa-pen"></i>
         </button>

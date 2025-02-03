@@ -22,16 +22,16 @@ h3,
   }
 }
 
-.downloading {
+.loading {
   animation: width 5s linear infinite;
   margin-right: auto;
 }
 
-.downloading1 {
+.loading1 {
   animation-delay: -3s;
 }
 
-.downloading2 {
+.loading2 {
   animation-delay: -1s;
 }
 

@@ -1,8 +1,8 @@
 type TranscribeProps = {
-  downloading: boolean;
+  loading: boolean;
 };
 
-export default function Transcribe({ downloading }: TranscribeProps) {
+export default function Transcribe({ loading }: TranscribeProps) {
   return (
     <div className="flex flex-col items-center justify-center flex-1 gap-10 pb-24 text-center md:gap-14">
       <div className="flex flex-col gap-2 sm:gap-4">
@@ -11,9 +11,9 @@ export default function Transcribe({ downloading }: TranscribeProps) {
           <span className="text-blue-400 bold"> Trancription </span>
         </h1>
         <p>
-          {!downloading
+          {!loading
             ? "Your download has not started yet"
-            : "Currently downloading your audio file"}
+            : "Currently loading your audio file"}
         </p>
       </div>
       <div className="flex flex-col gap-2 sm:gap-4 max-w-[400px] mx-auto w-full">
@@ -22,8 +22,8 @@ export default function Transcribe({ downloading }: TranscribeProps) {
             <div
               key={num}
               className={
-                "rounded-full h-2 sm:h-3 bg-slate-400 downloading " +
-                `downloading${num}`
+                "rounded-full h-2 sm:h-3 bg-slate-400 loading " +
+                `loading${num}`
               }
             ></div>
           );

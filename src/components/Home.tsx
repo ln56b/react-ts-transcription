@@ -23,8 +23,6 @@ export default function Home({ setFile, setAudioStream }: HomeProps) {
   async function startRecording(): Promise<void> {
     let stream = null;
 
-    console.log("Start recording");
-
     try {
       const streamData = navigator.mediaDevices.getUserMedia({
         audio: true,
@@ -32,7 +30,7 @@ export default function Home({ setFile, setAudioStream }: HomeProps) {
       });
       stream = await streamData;
     } catch (error) {
-      console.error(error);
+      console.warn("Error in streamData", error.message);
       return;
     }
 
@@ -57,7 +55,6 @@ export default function Home({ setFile, setAudioStream }: HomeProps) {
   async function stopRecording(): Promise<void> {
     if (!mediaRecorder.current) return;
     setRecordingStatus(RecordingStatus.Stopped);
-    console.log("Stop recording");
     mediaRecorder.current.stop();
     mediaRecorder.current.onstop = () => {
       const audioBlob = new Blob(audioChunks, { type: mimeType });
